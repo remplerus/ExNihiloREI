@@ -1,28 +1,49 @@
 modLoader="javafml"
 loaderVersion="[1,)"
-issueTrackerURL="https://github.com/NovaMachina-Mods/ExNihiloSequentia/issues"
+issueTrackerURL="https://github.com/NovaMachina-Mods/ExNihiloREI/issues"
 license="CC BY-NC-SA 4.0"
 
 [[mods]]
-    modId="exnihilosequentia"
+    modId="exnihilorei"
     logoFile="logo.png"
     version="6.0.0"
-    displayName="Ex Nihilo: Sequentia"
-    updateJSONURL="https://api.modrinth.com/updates/WhVa4xyw/forge_updates.json"
+    displayName="Ex Nihilo: Roughly Enough Items Addon"
+    updateJSONURL="https://api.modrinth.com/updates/00000000/forge_updates.json"
     authors="NovaMachina"
-    description='''Ex Nihilo: Sequentia is a modern port of Ex Nihilo: Creatio for 1.12, which in turn was a fork of Ex Nihilo: Adscensio for 1.10, which was a continuation of Ex Nihilo for 1.7.10.'''
+    description='''REI Addon for Ex Nihilo: Sequentia'''
 
-[[dependencies.exnihilosequentia]]
+[[dependencies.exnihilorei]]
     modId="neoforge"
     type="required"
     versionRange="[20.4, 21)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.exnihilosequentia]]
+[[dependencies.exnihilorei]]
     modId="minecraft"
     type="required"
     versionRange="[1.20.4,1.21)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.exnihilorei]]
+   modId="novacore"
+   type="required"
+   ordering="AFTER"
+   side="BOTH"
+   versionRange="[2.0.0, 3.0.0)"
+
+[[dependencies.exnihilorei]]
+   modId="roughlyenoughitems"
+   type="required"
+   ordering="AFTER"
+   side="BOTH"
+   versionRange="[14.0.688, 15)"
+
+[[dependencies.exnihilorei]]
+   modId="exnihilosequentia"
+   type="required"
+   ordering="AFTER"
+   side="BOTH"
+   versionRange="[6.0.0, 7.0.0)"
 

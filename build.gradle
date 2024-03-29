@@ -64,6 +64,7 @@ repositories {
         url 'https://dl.cloudsmith.io/public/novamachina-mods/release/maven/'
         content {
             includeGroup 'novamachina.novacore'
+            includeGroup 'novamachina.exnihilosequentia'
         }
     }
     maven {
@@ -71,16 +72,44 @@ repositories {
         url 'https://dl.cloudsmith.io/public/novamachina-mods/snapshot/maven/'
         content {
             includeGroup 'novamachina.novacore'
+            includeGroup 'novamachina.exnihilosequentia'
+        }
+    }
+    maven {
+        url 'https://maven.architectury.dev'
+        content {
+            includeGroup 'dev.architectury'
+        }
+    }
+    maven {
+        url "https://maven.shedaniel.me"
+        content {
+            includeGroup 'me.shedaniel'
+            includeGroup 'me.shedaniel.cloth'
         }
     }
 }
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
+    implementation "novamachina.novacore:novacore:${nova_core_version}"
+    implementation "novamachina.exnihilosequentia:exnihilosequentia:${exnihilo_version}"
+    implementation "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
+    runtimeOnly "dev.architectury:architectury-neoforge:${architectury_version}"
+    runtimeOnly "me.shedaniel.cloth:cloth-config-neoforge:${cloth_version}"
+
+
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
 }
 
 modDependencies = [
-//        [ modId: "novacore", type: "required", ordering: "AFTER", side: "BOTH", versionRange: novacore_version_range]
+        [ modId: "novacore", type: "required", ordering: "AFTER", side: "BOTH", versionRange: novacore_version_range],
+        [ modId: "roughlyenoughitems", type: "required", ordering: "AFTER", side: "BOTH", versionRange: rei_version_range],
+        [ modId: "exnihilosequentia", type: "required", ordering: "AFTER", side: "BOTH", versionRange: exnihilo_version_range]
 ]
 modMixins = []
 
@@ -129,7 +158,7 @@ publishing {
 
 sonar {
     properties {
-        property "sonar.projectKey", "NovaMachina-Mods_ModTemplate"
+        property "sonar.projectKey", "NovaMachina-Mods_RoughlyEnoughItems"
         property "sonar.organization", "novamachina-mods"
         property "sonar.host.url", "https://sonarcloud.io"
     }
